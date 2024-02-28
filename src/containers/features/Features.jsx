@@ -4,28 +4,36 @@ import './features.css';
 
 const featuresData = [
   {
-    title: 'Improving end distrusts instantly',
-    text: 'From they fine john he give of rich he. They age and draw mrs like. Improving end distrusts may instantly was household applauded.',
+    title: 'النزاهة ضد الفساد',
+    text: 'توجيهات أخلاقية ترشدنا، مكافحة غسيل الأموال، الرشوة، الحفاظ على النزاهة في كل عملية، ضمان أفق أعمال خالٍ من الفساد.',
   },
   {
-    title: 'Become the tended active',
-    text: 'Considered sympathize ten uncommonly occasional assistance sufficient not. Letter of on become he tended active enable to.',
+    title: 'الخدمات المتكاملة',
+    text: 'معالجة غياب خدمات النقل في المنصات الحالية من خلال توفير حلاً شاملاً.',
   },
   {
-    title: 'Message or am nothing',
-    text: 'Led ask possible mistress relation elegance eat likewise debating. By message or am nothing amongst chiefly address.',
+    title: 'التنقل الذكي مع فلاتر البحث',
+    text: 'أدوات بحث متقدمة في مكانها، تسهيل إمكانية الوصول إلى المناقصات بدقة، توفير الوقت لجميع الأطراف المعنية، تنقل بسيط للتعاون الفعال.',
   },
   {
-    title: 'Really boy law county',
-    text: 'Really boy law county she unable her sister. Feet you off its like like six. Among sex are leave law built now. In built table in an rapid blush..',
+    title: 'تقييم الموردين',
+    text: 'تمكين المشترين من نظام تقييم شامل للموردين لاتخاذ القرارات المستنيرة.',
+  },
+  {
+    title: 'نظام التوصيات',
+    text: 'استخدام الذكاء الاصطناعي لتبسيط عملية اتخاذ القرار عن طريق تقديم توصيات شخصية لأفضل عروض المناقصات.',
+  },
+  {
+    title: 'اشتراك مرن',
+    text: 'تقديم نموذج سهل الاستخدام مع حرية استخدام الميزات دون الحاجة إلى اشتراكات إلزامية.',
   },
 ];
 
 const Features = () => (
   <div className="gpt3__features section__padding" id="features">
     <div className="gpt3__features-heading">
-      <h1 className="gradient__text">The Future is Now and You Just Need to Realize It. Step into Future Today. & Make it Happen.</h1>
-      <p>Request Early Access to Get Started</p>
+      <h1 className="gradient__text">لماذا TEGO</h1>
+      <p>المستقبل هو الآن وتحتاج فقط إلى تحقيقه. ادخل إلى المستقبل اليوم واجعله يحدث.</p>
     </div>
     <div className="gpt3__features-container">
       {featuresData.map((item, index) => (

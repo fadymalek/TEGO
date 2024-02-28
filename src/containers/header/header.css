@@ -19,6 +19,15 @@
     font-size: 62px;
     line-height: 75px;
     letter-spacing: -0.04em;
+    margin: 0 auto;
+    padding:0.5rem;
+}
+.gpt3__header-content .second-line {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 75px;
+    letter-spacing: -0.04em;
 }
 
 .gpt3__header-content p {
@@ -65,17 +74,17 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
+    text-align: center; /* Align text to the right */
     background: #FF4820;
     border: 2px solid #FF4820;
-    padding: 0 1rem;
+    padding: 0 2rem; /* Adjust padding to ensure text is centered horizontally */
     color: #fff;
     cursor: pointer;
     outline: none;
-
+    margin: 0 auto;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-
 .gpt3__header-content__people {
     width: 100%;
     display: flex;
@@ -109,7 +118,7 @@
 }
 
 .gpt3__header-image img {
-    width: 100%;
+    width: 80%;
     height: 100%;
 }
 

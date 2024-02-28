@@ -1,24 +1,30 @@
 import React from 'react';
-
-import { Footer, Blog, Possibility, Features, WhatGPT3, Header } from './containers';
-import { CTA, Brand, Navbar } from './components';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Footer, Blog, Possibility, Features, WhatGPT3, Header, SignUpPage } from './containers';
+import { Navbar } from './components';
 
 import './App.css';
 
 const App = () => (
-  <div className="App">
-    <div className="gradient__bg">
-      <Navbar />
-      <Header />
+
+  <Router>
+    <div className="App">
+      <Switch>
+        <Route path="/signup" component={SignUpPage} />
+        <Route path="/" exact>
+          <div className="gradient__bg">
+            <Navbar />
+            <Header />
+          </div>
+          <WhatGPT3 />
+          <Features />
+          <Possibility />
+          <Blog />
+          <Footer />
+        </Route>
+      </Switch>
     </div>
-    <Brand />
-    <WhatGPT3 />
-    <Features />
-    <Possibility />
-    <CTA />
-    <Blog />
-    <Footer />
-  </div>
+  </Router>
 );
 
 export default App;

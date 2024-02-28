@@ -16,6 +16,14 @@
     font-family: var(--font-family);
     font-weight: 800;
 }
+.gpt3__blog p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 38px;
+    color: var(--color-text);
+    margin-top: 1.5rem;
+}
 
 .gpt3__blog-container {
     display: flex;
@@ -24,7 +32,7 @@
 
 .gpt3__blog-container_groupA {
     flex: 0.75;
-    margin-right: 2rem;
+    margin-left: 2rem;
 }
 
 .gpt3__blog-container_groupB {

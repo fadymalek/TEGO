@@ -1,22 +1,18 @@
 import React from 'react';
-import people from '../../assets/people.png';
-import ai from '../../assets/ai.png';
+// import people from '../../assets/people.png';
+import ai from '../../assets/Logo4.png';
 import './header.css';
 
 const Header = () => (
   <div className="gpt3__header section__padding" id="home">
     <div className="gpt3__header-content">
-      <h1 className="gradient__text">Let&apos;s Build Something amazing with GPT-3 OpenAI</h1>
-      <p>Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment. Party we years to order allow asked of.</p>
+      <h1 className="gradient__text">TEGO</h1>
+      <h1 className="gradient__text second-line">( منقصات الحكومة المصرية )</h1>
+      <p>TEGO عبارة عن منصة على الإنترنت تحل محل إعلانات الصحف التقليدية. يؤدي ذلك إلى تسريع عملية المناقصة ويجعل مجال المناقصة في متناول الجميع. كما أنه يقوم بتحويل كتيب الشروط والأحكام إلى صيغة رقمية، مما يوفر رؤى تفصيلية لمقدمي العروض المحتملين، ويعزز الفهم، ويضمن عثور العميل على المورد المطابق تمامًا.</p>
 
       <div className="gpt3__header-content__input">
-        <input type="email" placeholder="Your Email Address" />
-        <button type="button">Get Started</button>
-      </div>
-
-      <div className="gpt3__header-content__people">
-        <img src={people} />
-        <p>1,600 people requested access a visit in last 24 hours</p>
+        <input type="email" placeholder="البريد الالكتروني" />
+        <button type="button">لنبدأ</button>
       </div>
     </div>
 

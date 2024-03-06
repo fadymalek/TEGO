@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import { Navbar } from '../../components';
 import './signUpPage.css';
+// import axios from 'axios';
 
 import { Link } from 'react-router-dom'; // Import Link
 import '../../components/navbar/navbar.css';
@@ -39,11 +40,6 @@ const SignUpPage = () => {
       [name]: value,
     }));
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can handle form submission here
-    // console.log(formData);
-  };
   const [repeatBranchRows, setRepeatBranchRows] = useState(1);
   const [repeatOwnerRows, setRepeatOwnerRows] = useState(1);
   const handleAddBranchRow = () => {
@@ -51,18 +47,68 @@ const SignUpPage = () => {
       setRepeatBranchRows((prevRepeatRows) => prevRepeatRows + 1);
     }
   };
-
   const handleAddOwnerRow = () => {
     if (repeatOwnerRows < 3) {
       setRepeatOwnerRows((prevRepeatRows) => prevRepeatRows + 1);
     }
   };
   const [repeatActivityRows, setRepeatActivityRows] = useState(1); // State for repeated activity rows
-
   const handleAddActivityRow = () => {
     setRepeatActivityRows((prevRepeatRows) => prevRepeatRows + 1);
   };
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const postData = {
+        name: formData.companyName,
+        location: formData.address,
+        commercial_registration_number: formData.commercialRegistrationNumber,
+        tax_card_number: formData.taxCardNumber,
+        mobile: formData.mobile,
+        landline: formData.landline,
+        fax_number: formData.fax,
+        company_type: formData.companyType,
+        company_capital: formData.capital,
+        branches: [...Array(repeatOwnerRows)].map((_, index) => ({
+          address: formData[`Company_branches_address_${index}`],
+          city: formData[`Company_branches_governorate_${index}`],
+        })),
+        company_fields: [...Array(repeatActivityRows)].map((_, index) => ({
+          primary_field: formData[`Main_activity_${index}`],
+          secondary_field: formData[`Sub_activity_${index}`],
+        })),
+        user: {
+          first_name: formData.owner_name,
+          last_name: '', // Add last name if available
+          email: formData.email,
+          mobile_number: formData.mobile,
+          password: formData.passWord,
+        },
+        owners: [...Array(repeatBranchRows)].map((_, index) => ({
+          name: formData[`owner_name_${index}`],
+          owner_id: formData[`The_owner_id_${index}`],
+          onwer_position: formData[`Position_of_owner_${index}`],
+          address: formData[`Owner_address_${index}`],
+        })),
+      };
+      // Make POST request
+      const response = await fetch('http://127.0.0.1:8000/companies', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+      // Optionally, you can handle the response here
+      console.log('Form submitted successfully');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Handle errors, e.g., display error messages to the user
+    }
+  };
   return (
     <>
       <div className="gpt3__navbar">
@@ -317,7 +363,7 @@ const SignUpPage = () => {
               <input type="text" name="passWord_2" id="passWord_2" value={formData.passWord_2} onChange={handleChange} />
             </label>
           </div>
-          <button type="submit" className="submit_button">Submit</button>
+          <button type="submit" className="submit_button" onClick={handleSubmit}>Submit</button>
         </form>
       </div>
     </>

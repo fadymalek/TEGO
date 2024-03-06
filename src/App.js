@@ -4,6 +4,7 @@ import { Footer, Blog, Possibility, Features, WhatGPT3, Header, SignUpPage } fro
 import { Navbar } from './components';
 
 import './App.css';
+import Sidebar from './containers/d/Sidebar';
 
 const App = () => (
 
@@ -11,10 +12,12 @@ const App = () => (
     <div className="App">
       <Switch>
         <Route path="/signup" component={SignUpPage} />
+        <Route path="/file" component={Sidebar} />
         <Route path="/" exact>
           <div className="gradient__bg">
             <Navbar />
             <Header />
+            <Sidebar />
           </div>
           <WhatGPT3 />
           <Features />
